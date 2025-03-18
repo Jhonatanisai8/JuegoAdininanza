@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header__adivinar {
+    background-color: #FF715B;
+    box-sizing: border-box;
+    display: grid;
+    text-align: center;
+    /* margin-bottom: 40px; */
+}
+
+.header__tittle {
+    color: #FFFFFF;
+    padding: 30px 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 3px #000052;
+    font-size: 3em;
+}
+
+.seccion {
+    background-color: #4C5454;
+    max-width: 500px;
+    padding: 20px;
+    color: #fff;
+    margin: auto;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+input[type='number'] {
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px 4px;
+}
+
+.seccion__content {
+    font-size: 1.5em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+input[type='number']::placeholder {
+    font-size: 1em;
+    letter-spacing: 2px;
+}
+
+.boton__comprobar {
+    background-color: #FBFFFE;
+    padding: 12px 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: #000;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+.image__content {
+    text-align: center;
+}
+
+img {
+    border-radius: 50%;
+    width: 200px;
+    padding: 30px 0;
+}
+
+.mensaje__alert {
+    font-size: 1.2em;
+}
