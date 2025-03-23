@@ -24,7 +24,7 @@ function actualizarIntentos() {
     }
 
     mensajeNumeroIntentos.textContent = `Tienes ${numeroIntentos} intentos`;
-    mensajeNumeroIntentos.style.color = 'red'
+    mensajeNumeroIntentos.style.color = 'white'
 }
 
 
@@ -57,7 +57,7 @@ function verificarResultado() {
 
         if (numeroIntentos === 0) {
             mensaje.textContent = `Perdiste! El número era ${numeroComputadora}`
-            mensaje.style.color = 'red'
+            mensaje.style.color = 'white'
             numeroUsuario.disabled = true
         }
         mensajeIntentosQuedan.textContent = `Te quedan ${numeroIntentos} intentos`
