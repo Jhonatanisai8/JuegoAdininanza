@@ -19,12 +19,16 @@
         <div>
             <label for="opciones">Eliga una opcion por favor:</label>
             <select class="opciones" name="opciones" id="opciones">
+                <option value="selec">=SELECIONAR=</option>
                 <option value="op01">1. Fácil (10 oportunidades)</option>
                 <option value="op02">2. Medio (5 oportunidades)</option>
                 <option value="op03">3. Difícil (3 oportunidades)</option>
             </select>
         </div>
-        <p class="mensaje__alert" id="mensajeNumeroIntentos"></p>
+        <div>
+            <p class="mensaje__alert" id="mensajeNumeroIntentos"></p>
+            <p class="mensaje__alert" id="mensajeIntentosQuedan"></p>
+        </div>
         <p class="seccion__content">Introduce un número entre el 1 y 100.</p>
         <label for="numero_entrada">Tu número: </label>
         <input type="number" placeholder="Ingresa un numero por favor" id="numero_entrada">

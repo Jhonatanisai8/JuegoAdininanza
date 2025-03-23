@@ -4,6 +4,7 @@ let numeroUsuario = document.getElementById('numero_entrada')
 
 let mensaje = document.getElementById('mensaje')
 let mensajeNumeroIntentos = document.getElementById('mensajeNumeroIntentos')
+let mensajeIntentosQuedan = document.getElementById('mensajeIntentosQuedan')
 
 let opcionSeleccionada = document.getElementById('opciones')
 let numeroIntentos = 0
@@ -22,38 +23,44 @@ function actualizarIntentos() {
             break;
     }
 
-    // Actualizar el texto en la página
     mensajeNumeroIntentos.textContent = `Tienes ${numeroIntentos} intentos`;
+    mensajeNumeroIntentos.style.color = 'red'
 }
 
 
 opcionSeleccionada.addEventListener('change', actualizarIntentos);
 
 function verificarResultado() {
-    let numeroIngresado = parseInt(numeroUsuario.value)
-
-    if (numeroIngresado < 1 || numeroIngresado > 100 || isNaN(numeroIngresado)) {
-        mensaje.textContent = 'Por favor ingresar un número valido.'
+    if (opcionSeleccionada.value === 'selec') {
+        mensajeNumeroIntentos.textContent = 'Por favor seleccionar una opción.'
         return
-    }
-
-    if (numeroIngresado === numeroComputadora) {
-        mensaje.textContent = 'Felicitaciones! ¡Has adivinado el número!'
-        mensaje.style.color = 'green'
-        numeroUsuario.disabled = true
-        // return
-    } else if (numeroIngresado < numeroComputadora) {
-        mensaje.textContent = 'El numero debe ser mayor'
-        numeroIntentos--
     } else {
-        mensaje.textContent = 'El numero debe ser menor'
-        numeroIntentos--
-    }
+        let numeroIngresado = parseInt(numeroUsuario.value)
 
-    if (numeroIntentos === 0) {
-        mensaje.textContent = `Perdiste! El número era ${numeroComputadora}`
-        mensaje.style.color = 'red'
-        numeroUsuario.disabled = true
+        if (numeroIngresado < 1 || numeroIngresado > 100 || isNaN(numeroIngresado)) {
+            mensaje.textContent = 'Por favor ingresar un número valido.'
+            return
+        }
+
+        if (numeroIngresado === numeroComputadora) {
+            mensaje.textContent = 'Felicitaciones! ¡Has adivinado el número!'
+            mensaje.style.color = 'green'
+            numeroUsuario.disabled = true
+            // return
+        } else if (numeroIngresado < numeroComputadora) {
+            mensaje.textContent = 'El numero debe ser mayor'
+            numeroIntentos--
+        } else {
+            mensaje.textContent = 'El numero debe ser menor'
+            numeroIntentos--
+        }
+
+        if (numeroIntentos === 0) {
+            mensaje.textContent = `Perdiste! El número era ${numeroComputadora}`
+            mensaje.style.color = 'red'
+            numeroUsuario.disabled = true
+        }
+        mensajeIntentosQuedan.textContent = `Te quedan ${numeroIntentos} intentos`
     }
 
     console.log("clik")
